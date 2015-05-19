@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Handles installation for USPS API module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function usps_api_uninstall() {
+  // Remove the unused variables.
+  $variables = array(
+    'usps_api_id',
+    'curl_proxy_enable',
+    'curl_proxy_server',
+    'curl_proxy_port',
+    'debug_usps_api',
+  );
+  foreach ($variables as $v) {
+    variable_del($v);
+  }
+}

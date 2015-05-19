@@ -1,0 +1,6 @@
+name = USPS API
+description = Simple API interface for the United States Postal Service.
+core = 7.x
+package = Web Services
+files[] = includes/usps_api.inc
+configure = admin/config/services/usps_api

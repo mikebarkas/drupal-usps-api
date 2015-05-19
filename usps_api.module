@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Defines the USPS API module and settings.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function usps_api_menu() {
+  $items = array();
+  $items['admin/config/services/usps_api'] = array(
+    'title' => t('USPS API Settings'),
+    'description' => t('United States Postal Service API settings.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('usps_api_settings_form'),
+    'access arguments' => array('access administration pages'),
+    'file' => 'includes/usps_api_admin.inc',
+  );
+  return $items;
+}
