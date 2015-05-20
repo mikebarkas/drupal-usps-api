@@ -36,4 +36,4 @@ Instantiate a new `UspsApi` object with an array.
 
 The array will be the minimum required address fields to return a response.
 
-Array index `'error'` will be `true` is an error occurs.
+Array index `'error'` will be `true` if an error occurs.
