@@ -47,6 +47,8 @@ class UspsApi {
   /**
    * Constructor.
    *
+   * Set the applicable properties.
+   *
    * @param array $data
    *    Property values.
    */
@@ -54,7 +56,7 @@ class UspsApi {
     // If $data is an array, set the properties.
     if (is_array($data)) {
 
-      // Set the address during instantiation.
+      // Set the address fields during instantiation.
       if (count($data) > 0) {
         foreach ($data as $name => $value) {
           $this->$name = $value;
@@ -76,7 +78,7 @@ class UspsApi {
         $this->proxyPort = variable_get('curl_proxy_port', NULL);
       }
 
-      // Set debug settings.
+      // Set the debug tools.
       $this->dt = variable_get('debug_usps_api', 0);
     }
     // If $data is not an array, set error to true.
