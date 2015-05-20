@@ -143,6 +143,9 @@ class UspsApi {
 
   /**
    * Address Standardization Verification API.
+   *
+   * @return array
+   *   Array of address fields or return with error.
    */
   public function validateStandardAddress() {
     // Check if constructor returns errors.
@@ -198,7 +201,7 @@ class UspsApi {
       return $this->r;
     }
 
-    // Check if error document was returned.
+    // Check if error document response was returned.
     if ($x->Address->Error) {
       $this->r['error'] = TRUE;
       $this->r['number'] = (string) $x->Address->Error->Number;
