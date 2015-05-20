@@ -90,6 +90,14 @@ class UspsApi {
 
   /**
    * CURL Method.
+   *
+   * Makes the API call using cURL.
+   *
+   * @param string $url
+   *   The API url as a string.
+   *
+   * @return string
+   *   The XML response document or return with error.
    */
   protected function curlRequest($url) {
     // Config and start cURL.
@@ -107,11 +115,12 @@ class UspsApi {
     // cURL result.
     $result = curl_exec($c);
 
-    // Add debug Xml Response to returned array.
+    // Add debug XML response to returned array.
     if (is_string($this->dt['xml_response'])) {
       $this->r['debug_xml_response'] = $result;
     }
 
+    // Get cURL info array.
     $cr = curl_getinfo($c);
 
     // Add debug cURL Response to returned array.
@@ -127,6 +136,7 @@ class UspsApi {
       curl_close($c);
       return $this->r;
     }
+    // Return an XML response string.
     curl_close($c);
     return $result;
   }
