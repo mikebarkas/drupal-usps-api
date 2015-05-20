@@ -1,5 +1,7 @@
 ## US Postal Service API Module
 
+_currently in development_
+
 This module is an API interface only and requires additional coding or module to
 interact with the data.
 
@@ -25,3 +27,9 @@ The USPS api provides three services:
 
 ### USPS Web Tools API Guide:
 https://www.usps.com/business/web-tools-apis/address-information-api.htm
+
+
+**Developers**
+Instantiate a new `UspsApi` object with an array.
+
+The array will be the minimum required address fields to return a response.
